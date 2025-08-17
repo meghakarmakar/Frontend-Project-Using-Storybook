@@ -50,22 +50,29 @@ test/
 
 Clone the repository:
 
-```git clone <your-github-url>```
-```cd assignment```
-```npm install```
+``` bash 
+git clone 
+cd assignment
+npm install
+```
 
 
 Run locally:
 
 # Dev server (Vite)
+``` bash
 npm run dev
+```
 
 # Storybook (component docs)
 npm run storybook
 
 # Run tests
+``` bash 
 npm run test       # watch mode
-npm run test:run   # single run
+npm run test:run
+```
+  # single run
 
 # Production builds
 npm run build             # build app
@@ -74,7 +81,10 @@ npm run build-storybook   # build Storybook docs
 
 Preview production build:
 
-```npm run preview ```  # serves dist/ at http://localhost:4173
+``` bash 
+npm run preview
+```
+# serves dist/ at http://localhost:4173
 
 🧩 Components
 🔹 InputField
@@ -155,7 +165,9 @@ Accessibility: labels, roles, aria attributes
 
 Run tests:
 
-```npm run test```
+``` bash 
+npm run test
+```
 
 
 Example passing output:
@@ -180,7 +192,9 @@ Storybook deployed to Chromatic or Vercel.
 
 App built with:
 
-```npm run build```
+``` bash 
+npm run build
+```
 
 
 → outputs to /dist.
