@@ -166,10 +166,7 @@ Example passing output:
 Test Files  2 passed (2)
 Tests       13 passed (13)
 
-📸 Screenshots / GIFs
 
-
-![Uploading Screenshot 2025-08-18 001708.png…]()
 
 InputField states (default, error, disabled, loading)
 
