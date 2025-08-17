@@ -1,69 +1,207 @@
-# React + TypeScript + Vite
+📖 Assignment – Frontend Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project implements two reusable, accessible, and well-documented UI components using React, TypeScript, TailwindCSS, and Storybook:
 
-Currently, two official plugins are available:
+InputField – a flexible text input with multiple variants, states, and interactive features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+DataTable – a responsive table with sorting, row selection, loading, and empty states.
 
-## Expanding the ESLint configuration
+Both components are designed to be accessible (a11y), responsive (mobile + dark mode), and follow best practices for reusability and maintainability.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🚀 Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+React 18
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+TypeScript
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+TailwindCSS
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Storybook – for component documentation and preview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Vitest + Testing Library – for unit tests
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Vite – for fast development & build
+
+📂 Folder Structure
+src/
+  components/
+    input-field/
+      InputField.tsx
+      InputField.stories.tsx
+      InputField.test.tsx
+      index.ts
+    data-table/
+      DataTable.tsx
+      DataTable.stories.tsx
+      DataTable.test.tsx
+      index.ts
+    index.ts        # Barrel export
+  icons/
+    Spinner.tsx
+  lib/
+    cva.ts
+  App.tsx
+  main.tsx
+  index.css
+test/
+  setup.ts          # Vitest + RTL setup
+
+🛠️ Setup & Commands
+
+Clone the repository:
+
+git clone <your-github-url>
+cd assignment
+npm install
+
+
+Run locally:
+
+# Dev server (Vite)
+npm run dev
+
+# Storybook (component docs)
+npm run storybook
+
+# Run tests
+npm run test       # watch mode
+npm run test:run   # single run
+
+# Production builds
+npm run build             # build app
+npm run build-storybook   # build Storybook docs
+
+
+Preview production build:
+
+npm run preview   # serves dist/ at http://localhost:4173
+
+🧩 Components
+🔹 InputField
+
+Props:
+
+label, placeholder, helperText, error
+
+variant: filled | outlined | ghost
+
+size: sm | md | lg
+
+disabled, loading, clearable, type="password" (toggle visibility)
+
+Features:
+
+Clear button ✖
+
+Password toggle 👁️
+
+Loading spinner ⏳
+
+Accessible labels, error messages, focus ring
+
+Dark mode + responsive
+
+🔹 DataTable
+
+Props:
+
+columns: with optional sortable: true
+
+data: array of rows
+
+selectable: enables row checkboxes
+
+loading, emptyMessage
+
+Features:
+
+Sorting (ascending/descending)
+
+Row selection (single, multi, select-all)
+
+Loading spinner row
+
+Empty state fallback
+
+Responsive & accessible
+
+📖 Storybook Docs
+
+Each component includes:
+
+✅ Usage examples (variants, sizes, states)
+
+✅ Props table (autodocs)
+
+✅ Accessibility notes (labels, roles, focus states)
+
+✅ Theming & responsiveness (light/dark, sm/md/lg)
+
+✅ Best practices & do/don’t
+
+📍 Live Storybook Preview: View Here
+
+🧪 Testing
+
+Unit tests cover:
+
+Rendering with props
+
+States: loading, disabled, error, empty
+
+Interactions: typing, clearing, toggling password, sorting, selecting rows
+
+Accessibility: labels, roles, aria attributes
+
+Run tests:
+
+npm run test
+
+
+Example passing output:
+
+✓ InputField.test.tsx (7 tests | 7 passed)
+✓ DataTable.test.tsx (6 tests | 6 passed)
+
+Test Files  2 passed (2)
+Tests       13 passed (13)
+
+📸 Screenshots / GIFs
+
+
+![Uploading Screenshot 2025-08-18 001708.png…]()
+
+InputField states (default, error, disabled, loading)
+
+Password toggle & clear button
+
+DataTable sorting, row selection, empty, loading
+
+📦 Deployment
+
+Storybook deployed to Chromatic or Vercel.
+
+App built with:
+
+npm run build
+
+
+→ outputs to /dist.
+
+✅ Submission Checklist
+
+ InputField component with required states & features
+
+ DataTable component with sorting, selection, loading, empty state
+
+ Storybook stories (docs, states, a11y, theming, usage)
+
+ Unit tests (Vitest + Testing Library)
+
+ Clean folder structure + barrel exports
+
+ GitHub repo with README + code
+
+ Storybook deployed link
+
+ Screenshots/GIFs
