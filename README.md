@@ -50,9 +50,9 @@ test/
 
 Clone the repository:
 
-git clone <your-github-url>
-cd assignment
-npm install
+```git clone <your-github-url>```
+```cd assignment```
+```npm install```
 
 
 Run locally:
@@ -74,7 +74,7 @@ npm run build-storybook   # build Storybook docs
 
 Preview production build:
 
-npm run preview   # serves dist/ at http://localhost:4173
+```npm run preview ```  # serves dist/ at http://localhost:4173
 
 🧩 Components
 🔹 InputField
@@ -155,7 +155,7 @@ Accessibility: labels, roles, aria attributes
 
 Run tests:
 
-npm run test
+```npm run test```
 
 
 Example passing output:
@@ -180,7 +180,7 @@ Storybook deployed to Chromatic or Vercel.
 
 App built with:
 
-npm run build
+```npm run build```
 
 
 → outputs to /dist.
