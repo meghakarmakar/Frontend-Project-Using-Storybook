@@ -51,7 +51,7 @@ test/
 Clone the repository:
 
 ``` bash 
-git clone 
+git clone https://github.com/meghakarmakar/Frontend-Project-Using-Storybook.git
 cd assignment
 npm install
 ```
@@ -215,4 +215,3 @@ npm run build
 
  Storybook deployed link
 
- Screenshots/GIFs
